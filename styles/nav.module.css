@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    position: fixed;
+    top: 2rem;
+    left: 4rem;
+    z-index: 1;
+}
+
+.title {
+    font-family: var(--font-leky);
+    color: var(--white);
+}
+
+.span {
+    font-size: 0.5rem;
+}
+
+.link {
+    color: var(--white);
+    text-transform: uppercase;
+    padding-left: 4rem;
+}
+
+.links__container {
+    display: flex;
+    list-style: none;
+}

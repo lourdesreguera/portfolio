@@ -14,6 +14,7 @@ import img3 from "../../public/images/3.png";
 
 import styles from "../../styles/portfolio.module.css";
 import Link from "next/link";
+import Nav from "../components/Nav";
 
 const images = [
   {
@@ -26,14 +27,14 @@ const images = [
   {
     id: 2,
     src: img2,
-    title: "Slide Ink Studio",
+    title: "Slide Ink Studiø",
     date: "#2022",
     tech: "React.js",
   },
   {
     id: 3,
     src: img1,
-    title: "Korriban",
+    title: "Kørriban",
     date: "#2022",
     tech: "React.js",
   },
@@ -79,12 +80,15 @@ function Portfolio() {
   });
 
   return (
-    <section className={styles.sec}>
-      {images.map((image) => (
-        <ImageComp id={image} key={image.id} />
-      ))}
-      <motion.div className={styles.progress} style={{ scaleX }} />
-    </section>
+    <>
+      <Nav />
+      <section className={styles.sec}>
+        {images.map((image) => (
+          <ImageComp id={image} key={image.id} />
+        ))}
+        <motion.div className={styles.progress} style={{ scaleX }} />
+      </section>
+    </>
   );
 }
 
