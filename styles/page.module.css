@@ -1,4 +1,20 @@
 .heading {
     color: var(--pink);
+    font-size: 4rem;
+    line-height: 6rem;
 }
 
+.subheading {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 4rem;
+    font-family: var(--font-montserrat);
+}
+
+.portfolio {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--pink);
+    
+}

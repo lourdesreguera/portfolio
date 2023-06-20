@@ -81,13 +81,21 @@ export default function Home() {
           style={{
             position: "fixed",
             left: 0,
-            top: "26vw",
+            top: "calc(50% - 96px)",
             width: "100%",
             height: "100vh",
             color: "#fff",
           }}
         >
-          <h1 className={styles.heading}>Lourdes Reguera</h1>
+          <div
+            style={{
+              maxWidth: "28.5rem",
+              margin: "0 auto",
+            }}
+          >
+            <h1 className={styles.heading}>Lourdes Reguera</h1>
+            <h2 className={styles.subheading}>Frontend Developer</h2>
+          </div>
         </Plx>
         <Plx
           parallaxData={[
@@ -106,13 +114,13 @@ export default function Home() {
           style={{
             position: "fixed",
             left: 0,
-            top: "30vw",
+            top: "calc(50% - 22px)",
             width: "100%",
             height: "100vh",
             zIndex: "3000",
           }}
         >
-          <Link href="/about">Portfolio</Link>
+          <Link href="/about"><h3 className={styles.portfolio}>Portfolio</h3></Link>
         </Plx>
         {/* <div
         style={{
@@ -133,9 +141,7 @@ export default function Home() {
         ></div>
       </div> */}
       </div>
-      <section>
-        <p>hola</p>
-      </section>
+      
     </main>
   );
 }
