@@ -24,16 +24,9 @@ export default function Home() {
               ],
             },
           ]}
-          style={{
-            position: "fixed",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "100vh",
-            zIndex: 1000,
-          }}
+          className={`${styles.prl} ${styles.prl__cover}`}
         >
-          <Image style={{ width: "100%" }} src={bg} alt="foreground" />
+          <Image className={styles.img} src={bg} alt="foreground" />
         </Plx>
         <Plx
           parallaxData={[
@@ -49,13 +42,7 @@ export default function Home() {
               ],
             },
           ]}
-          style={{
-            position: "fixed",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "100vh",
-          }}
+          className={`${styles.prl} ${styles.prl__bcg}`}
         >
           <div style={{ width: "100vw", height: "100vh" }}></div>
         </Plx>
@@ -78,14 +65,7 @@ export default function Home() {
               ],
             },
           ]}
-          style={{
-            position: "fixed",
-            left: 0,
-            top: "calc(50% - 96px)",
-            width: "100%",
-            height: "100vh",
-            color: "#fff",
-          }}
+          className={`${styles.prl} ${styles.prl__headings}`}
         >
           <div
             style={{
@@ -111,37 +91,13 @@ export default function Home() {
               ],
             },
           ]}
-          style={{
-            position: "fixed",
-            left: 0,
-            top: "calc(50% - 22px)",
-            width: "100%",
-            height: "100vh",
-            zIndex: "3000",
-          }}
+          className={`${styles.prl} ${styles.prl__links}`}
         >
-          <Link href="/about"><h3 className={styles.portfolio}>Portfolio</h3></Link>
+          <Link href="/portfolio">
+            <h3 className={styles.portfolio}>Portfolio</h3>
+          </Link>
         </Plx>
-        {/* <div
-        style={{
-          position: "fixed",
-          lefft: 0,
-          top: 0,
-          zIndex: 200,
-          paddingTop: "56%",
-          height: "400vh",
-          width: "100%",
-        }}
-      >
-        <div
-          style={{
-            background: "#000",
-            height: "100%",
-          }}
-        ></div>
-      </div> */}
       </div>
-      
     </main>
   );
 }
