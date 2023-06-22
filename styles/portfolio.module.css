@@ -65,6 +65,7 @@
 
 .link {
   display: flex;
+  z-index: 100;
 }
 
 .tech {

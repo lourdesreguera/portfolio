@@ -1,10 +1,5 @@
 "use client";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import img1 from "../../public/images/1.png";
@@ -22,6 +17,7 @@ const images = [
     title: "Kørriban",
     date: "#2022",
     tech: "React.js",
+    href: "https://korriban.es",
   },
   {
     id: 2,
@@ -29,6 +25,7 @@ const images = [
     title: "Slide Ink Studiø",
     date: "#2022",
     tech: "React.js",
+    href: "https://slide-ink-studio-react.vercel.app/",
   },
   {
     id: 3,
@@ -36,6 +33,7 @@ const images = [
     title: "GRX",
     date: "#2023",
     tech: "Vue",
+    href: "https://grx-metal.vercel.app/",
   },
 ];
 
@@ -65,7 +63,7 @@ function ImageComp(id) {
         <h2 className={styles.h2}>{id.id.title}</h2>
         <div className={styles.link__container}>
           <p className={styles.date}>{id.id.date}</p>
-          <a href="https://linkedin.com" className={styles.link}>
+          <a href={id.id.href} className={styles.link} target="_blank">
             <Image src="./arrow.svg" alt="" width={24} height={24} />
           </a>
         </div>

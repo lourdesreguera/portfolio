@@ -3,13 +3,12 @@ import { useRef, useState } from "react";
 import { useDimensions } from "./use-dimensions";
 import Navigation from "./Navigation";
 import { MenuToggle } from "./MenuToogle";
-import styles from '../../styles/nav.module.css'
-import stylesDropdown from '../../styles/dropdown.module.css'
-
+import styles from "../../styles/nav.module.css";
+import stylesDropdown from "../../styles/dropdown.module.css";
 
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 280px 40px)`,
+    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -17,12 +16,12 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 280px 40px)",
+    clipPath: "circle(30px at 40px 40px)",
     transition: {
-      delay: 0.5,
+      delay: 0,
       type: "spring",
       stiffness: 400,
-      damping: 40,
+      damping: 50,
     },
   },
 };
@@ -38,7 +37,7 @@ export default function DropdownMenu() {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className={styles.nav}
+      className={ styles.nav}
     >
       <motion.div className={stylesDropdown.background} variants={sidebar} />
       <Navigation />
