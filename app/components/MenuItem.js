@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "../../styles/dropdown.module.css";
 import Link from "next/link";
+import Image from "next/image";
 const variants = {
   open: {
     y: 0,
@@ -29,7 +30,10 @@ export const MenuItem = ({ i }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Link href={i.href}>{i.name}</Link>
+      <Link href={i.href} className={styles.li__container}>
+        <p>{i.name}</p>
+        <Image src="./blackArrow.svg" alt="" width={24} height={24} className={styles.arrow} />
+      </Link>
     </motion.li>
   );
 };

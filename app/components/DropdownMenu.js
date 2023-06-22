@@ -3,7 +3,9 @@ import { useRef, useState } from "react";
 import { useDimensions } from "./use-dimensions";
 import Navigation from "./Navigation";
 import { MenuToggle } from "./MenuToogle";
-import styles from '../../styles/dropdown.module.css'
+import styles from '../../styles/nav.module.css'
+import stylesDropdown from '../../styles/dropdown.module.css'
+
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -38,7 +40,7 @@ export default function DropdownMenu() {
       ref={containerRef}
       className={styles.nav}
     >
-      <motion.div className={styles.background} variants={sidebar} />
+      <motion.div className={stylesDropdown.background} variants={sidebar} />
       <Navigation />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>

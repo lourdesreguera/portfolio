@@ -66,7 +66,7 @@ function ImageComp(id) {
         <div className={styles.link__container}>
           <p className={styles.date}>{id.id.date}</p>
           <a href="https://linkedin.com" className={styles.link}>
-            <Image src="./arrow.svg" alt="View More" width={24} height={24} />
+            <Image src="./arrow.svg" alt="" width={24} height={24} />
           </a>
         </div>
         <p className={styles.tech}>{id.id.tech}</p>

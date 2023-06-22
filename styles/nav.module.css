@@ -1,9 +1,10 @@
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 100%;
+  z-index: 1;
 }
 
 .title {
@@ -15,15 +16,9 @@
   font-size: 0.5rem;
 }
 
-.link {
-  color: var(--white);
-  text-transform: uppercase;
-  padding-left: 4rem;
-}
-
-.links__container {
+.header {
   display: flex;
-  list-style: none;
+  padding: 1rem 1rem 0 1rem;
 }
 
 @media (min-width: 768px) {

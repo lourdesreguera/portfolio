@@ -50,6 +50,28 @@
   align-items: center;
   cursor: pointer;
   z-index: 2;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.li__container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.li:hover {
+  color: var(--pink);
+}
+
+.li:hover .arrow {
+  display: block;
+}
+
+.arrow {
+  margin-right: 1rem;
+  display: none;
 }
 
 .icon__placeholder {
