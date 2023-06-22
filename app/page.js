@@ -4,8 +4,10 @@ import styles from "../styles/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import bg from "/public/images/bg.png";
+import { useState } from "react";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <main className={styles.main}>
       <div style={{ height: "200vh" }}>
@@ -91,7 +93,10 @@ export default function Home() {
               ],
             },
           ]}
-          className={`${styles.prl} ${styles.prl__links}`}
+          className={`${styles.prl} ${styles.prl__links} ${
+            isVisible ? styles.visible : ""
+          }`}
+          onPlxEnd={() => setIsVisible(true)}
         >
           <Link href="/portfolio">
             <h3 className={styles.portfolio}>Portfolio</h3>

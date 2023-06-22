@@ -1,11 +1,5 @@
 .nav {
-    display: flex;
-    justify-content: space-between;
-    width: 90vw;
-    position: fixed;
-    top: 2rem;
-    left: 4rem;
-    z-index: 1;
+    display: none
 }
 
 .title {
@@ -26,4 +20,16 @@
 .links__container {
     display: flex;
     list-style: none;
+}
+
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+        position: fixed;
+        top: 2rem;
+        left: 4rem;
+        z-index: 1;
+    }
 }

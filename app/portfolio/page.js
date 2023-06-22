@@ -1,7 +1,6 @@
 "use client";
 import {
   motion,
-  MotionValue,
   useScroll,
   useSpring,
   useTransform,
@@ -13,16 +12,16 @@ import img2 from "../../public/images/2.png";
 import img3 from "../../public/images/3.png";
 
 import styles from "../../styles/portfolio.module.css";
-import Link from "next/link";
 import Nav from "../components/Nav";
+import { useEffect } from "react";
 
 const images = [
   {
     id: 1,
-    src: img3,
-    title: "GRX",
-    date: "#2023",
-    tech: "Vue",
+    src: img1,
+    title: "Kørriban",
+    date: "#2022",
+    tech: "React.js",
   },
   {
     id: 2,
@@ -33,10 +32,10 @@ const images = [
   },
   {
     id: 3,
-    src: img1,
-    title: "Kørriban",
-    date: "#2022",
-    tech: "React.js",
+    src: img3,
+    title: "GRX",
+    date: "#2023",
+    tech: "Vue",
   },
 ];
 
@@ -62,11 +61,16 @@ function ImageComp(id) {
         />
       </div>
 
-      <motion.h2 style={{ y }} className={styles.h2}>
-        {id.id.title}
-        <span className={styles.date}>{id.id.date}</span>
-        <span className={styles.tech}>{id.id.tech}</span>
-      </motion.h2>
+      <motion.div style={{ y }} className={styles.headings__container}>
+        <h2 className={styles.h2}>{id.id.title}</h2>
+        <div className={styles.link__container}>
+          <p className={styles.date}>{id.id.date}</p>
+          <a href="https://linkedin.com" className={styles.link}>
+            <Image src="./arrow.svg" alt="View More" width={24} height={24} />
+          </a>
+        </div>
+        <p className={styles.tech}>{id.id.tech}</p>
+      </motion.div>
     </section>
   );
 }
@@ -78,6 +82,10 @@ function Portfolio() {
     damping: 30,
     restDelta: 0.001,
   });
+
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
 
   return (
     <>

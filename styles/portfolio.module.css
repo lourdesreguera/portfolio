@@ -1,24 +1,20 @@
 .section {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin: 0 4rem;
   align-items: center;
   position: relative;
   scroll-snap-align: center;
   perspective: 500px;
 }
-/* 
-.sec {
-  margin: 0;
-  padding: 0;
-} */
 
 .section > .img__container {
-  width: 300px;
-  height: 400px;
+  width: 16rem;
+  height: 22rem;
   position: relative;
   max-height: 90vh;
-  margin: 20px;
+  margin: 0 1.5rem;
   overflow: hidden;
 }
 
@@ -28,36 +24,55 @@
   left: 0;
   right: 0;
   bottom: 0;
+  opacity: 0.2;
+  display: none;
+  width: 16rem;
+  height: 22rem;
+}
+
+.headings__container {
+  left: calc(50% - 9rem);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  max-width: 17rem;
+  align-items: flex-start;
+}
+
+.link__container {
+  display: flex;
+  align-items: center;
+  margin-top: 0.75rem;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .h2 {
   margin: 0;
   color: var(--pink);
-  left: calc(50% + 140px);
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 3rem;
   line-height: 1.4;
-  position: absolute;
   text-align: start;
-  display: flex;
-  flex-direction: column;
 }
 
 .date {
   color: var(--white);
   font-family: var(--font-montserrat);
   font-weight: 400;
-  font-size: 2rem;
-  margin-top: 0.5rem;
+  font-size: 1.25rem;
   font-style: italic;
+}
+
+.link {
+  display: flex;
 }
 
 .tech {
   color: var(--gray);
   font-family: var(--font-montserrat);
   font-weight: 700;
-  font-size: 1.25rem;
-  margin-top: 2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
   text-transform: uppercase;
 }
 
@@ -65,7 +80,65 @@
   position: fixed;
   left: 0;
   right: 0;
-  height: 5px;
+  height: 0.3rem;
   background: var(--pink);
-  bottom: 100px;
+  bottom: 6.25rem;
+}
+
+@media (min-width: 700px) {
+  .headings__container {
+    left: calc(50% - 2rem);
+    max-width: 22rem;
+  }
+
+  .h2 {
+    font-size: 4rem;
+  }
+
+  .date {
+    font-size: 2rem;
+  }
+
+  .tech {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .img {
+    opacity: 1;
+    display: flex;
+  }
+}
+
+@media (min-width: 900px) {
+  .section {
+    margin: 0 6rem;
+  }
+
+  .headings__container {
+    left: calc(50% - 2rem);
+    max-width: 358px;
+  }
+
+  .img {
+    width: 18.75rem;
+    height: 25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section > .img__container {
+    width: 18.75rem;
+    height: 25rem;
+   
+  }
+
+  .section {
+    justify-content: center;
+    margin: unset;
+  }
+
+  .headings__container {
+    left: calc(50% + 8.75rem);
+  }
 }
