@@ -9,7 +9,8 @@
 
 .title {
   font-family: var(--font-leky);
-  padding: 1rem 0 0 6rem ;
+  padding: 1.25rem 0 0 5rem ;
+  font-size: 0.75rem;
 }
 
 .span {
