@@ -14,6 +14,11 @@ const variants = {
 const items = [
   {
     id: 1,
+    name: "Portfolio",
+    href: "/portfolio",
+  },
+  {
+    id: 2,
     name: "Sobre mí",
     href: "/about",
   },

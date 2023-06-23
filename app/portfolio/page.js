@@ -63,9 +63,15 @@ function ImageComp(id) {
         <h2 className={styles.h2}>{id.id.title}</h2>
         <div className={styles.link__container}>
           <p className={styles.date}>{id.id.date}</p>
-          <a href={id.id.href} className={styles.link} target="_blank">
+          <motion.a
+            href={id.id.href}
+            className={styles.link}
+            target="_blank"
+            whileHover={{ scale: 1.3 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Image src="./arrow.svg" alt="" width={24} height={24} />
-          </a>
+          </motion.a>
         </div>
         <p className={styles.tech}>{id.id.tech}</p>
       </motion.div>
@@ -87,13 +93,15 @@ function Portfolio() {
 
   return (
     <>
-      <Nav />
-      <section className={styles.sec}>
+      <header>
+        <Nav />
+      </header>
+      <main className={styles.sec}>
         {images.map((image) => (
           <ImageComp id={image} key={image.id} />
         ))}
         <motion.div className={styles.progress} style={{ scaleX }} />
-      </section>
+      </main>
     </>
   );
 }

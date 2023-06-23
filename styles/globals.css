@@ -19,6 +19,7 @@ body {
   padding: 0;
   font-family: var(--font-montserrat);
   font-size: 16px;
+  color: var(--white);
 }
 
 h1, h2 {
