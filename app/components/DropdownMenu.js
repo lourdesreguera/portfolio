@@ -37,10 +37,10 @@ export default function DropdownMenu() {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className={ styles.nav}
+      className={ !isOpen ? styles.nav : `${styles.nav} ${styles.openNav}`}
     >
       <motion.div className={stylesDropdown.background} variants={sidebar} />
-      <Navigation />
+      <Navigation isOpen={isOpen} />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );

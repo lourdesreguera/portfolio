@@ -4,12 +4,14 @@
   left: 0;
   bottom: 0;
   width: 300px;
-  z-index: 1;
 }
 
+.openNav {
+  z-index: 1;
+}
 .title {
   font-family: var(--font-leky);
-  padding: 1.25rem 0 0 5rem ;
+  padding: 1.25rem 0 0 5rem;
   font-size: 0.75rem;
 }
 

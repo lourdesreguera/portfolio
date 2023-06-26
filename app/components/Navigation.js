@@ -23,15 +23,15 @@ const items = [
     href: "/about",
   },
   {
-    id: 2,
+    id: 3,
     name: "Contacto",
     href: "/contact",
   },
 ];
 
-export default function Navigation() {
+export default function Navigation({isOpen}) {
   return (
-    <motion.ul variants={variants} className={styles.ul}>
+    <motion.ul variants={variants} className={isOpen ? styles.ul : styles.hiddenUl}>
       {items.map((i) => (
         <MenuItem i={i} key={i.id} />
       ))}

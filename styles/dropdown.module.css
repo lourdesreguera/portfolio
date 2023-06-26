@@ -23,6 +23,10 @@
   background: transparent;
 }
 
+.hiddenUl {
+  display: none;
+}
+
 .ul,
 .li {
   margin: 0;

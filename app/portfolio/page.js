@@ -92,17 +92,17 @@ function Portfolio() {
   }, []);
 
   return (
-    <>
+    <div className={styles.container}>
       <header>
         <Nav />
       </header>
-      <main className={styles.sec}>
+      <main>
         {images.map((image) => (
           <ImageComp id={image} key={image.id} />
         ))}
         <motion.div className={styles.progress} style={{ scaleX }} />
       </main>
-    </>
+    </div>
   );
 }
 
