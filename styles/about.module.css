@@ -38,7 +38,7 @@
   font-size: 2.5rem;
 }
 
-.heading__about, .heading__experience {
+.heading__experience {
   text-align: start;
 }
 
@@ -46,6 +46,11 @@
   font-style: italic;
   font-weight: 1.25rem;
   line-height: 1.4;
+}
+
+.about__quote {
+  max-width: 60rem;
+  margin: 0 auto;
 }
 
 .heading__education, .heading__recommendations {
@@ -94,5 +99,6 @@
 }
 
 .p__quote {
-  padding: 0.25rem 0;
+  padding-top: 0.2rem;
+  font-size: 0.75rem;
 }

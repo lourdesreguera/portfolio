@@ -1,18 +1,21 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   motion,
+  useAnimation,
   useAnimationFrame,
   useMotionValue,
   useScroll,
   useSpring,
   useTransform,
   useVelocity,
+  useViewportScroll,
 } from "framer-motion";
 import styles from "../../styles/about.module.css";
 import Nav from "../components/Nav";
 import { wrap } from "@motionone/utils";
 import cv from "../components/cvData";
+import { useInView } from "react-intersection-observer";
 
 function ParallaxText({ children, baseVelocity = 100 }) {
   const baseX = useMotionValue(0);
@@ -74,6 +77,36 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   );
 }
 
+const divVariant = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, scale: 0 },
+};
+
+const Box = ({ children }) => {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+
+  return (
+    <motion.div
+      className={styles.container}
+      ref={ref}
+      variants={divVariant}
+      initial="hidden"
+      animate={control}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 export default function About() {
   const {
     aboutMe,
@@ -84,17 +117,17 @@ export default function About() {
     languages,
     recommendations,
   } = cv;
+
   return (
     <>
       <Nav />
       <main className={styles.main}>
-        <div className={styles.container}>
-          <h2 className={`${styles.heading} ${styles.heading__about}`}>
-            Sobre mí
-          </h2>
-          <p className={styles.quote}>{`"${aboutMe}"`}</p>
-        </div>
-        <div className={styles.container}>
+        <Box>
+          <p
+            className={`${styles.quote} ${styles.about__quote}`}
+          >{`"${aboutMe}"`}</p>
+        </Box>
+        <Box>
           <h2 className={`${styles.heading} ${styles.heading__education}`}>
             Formación
           </h2>
@@ -112,8 +145,8 @@ export default function About() {
                 );
               })}
           </div>
-        </div>
-        <div className={styles.container}>
+        </Box>
+        <Box>
           <h2 className={`${styles.heading} ${styles.heading__experience}`}>
             Experiencia
           </h2>
@@ -132,8 +165,8 @@ export default function About() {
                 );
               })}
           </div>
-        </div>
-        <div className={styles.container}>
+        </Box>
+        <Box>
           <div>
             <h2>Hard Skills</h2>
             <ul>
@@ -152,8 +185,106 @@ export default function About() {
                 })}
             </ul>
           </div>
-        </div>
-        <div className={styles.container}>
+        </Box>
+        <Box>
+          <h2
+            className={`${styles.heading} ${styles.heading__recommendations}`}
+          >
+            Dicen sobre mí...
+          </h2>
+          <div>
+            {recommendations &&
+              recommendations.map((item, i) => {
+                return (
+                  <>
+                    <p key={i} className={styles.quote}>{`"${item.text}"`}</p>
+                    <div className={styles.quote__person}>
+                      <p>{item.name}</p>
+                      <p className={styles.p__quote}>{item.company}</p>
+                      <p className={styles.p__quote}>{item.mail}</p>
+                    </div>
+                  </>
+                );
+              })}
+          </div>
+        </Box>
+        <div>-----------</div>
+        {/* <motion.div
+          ref={ref}
+          className={styles.container}
+          initial="hidden"
+          animate={control}
+          variants={divVariant}
+        >
+          <h2 className={`${styles.heading} ${styles.heading__about}`}>
+            Sobre mí
+          </h2>
+          <p className={styles.quote}>{`"${aboutMe}"`}</p>
+        </motion.div> */}
+        {/* <motion.div className={styles.container}>
+          <h2 className={`${styles.heading} ${styles.heading__education}`}>
+            Formación
+          </h2>
+          <div className={styles.container__items}>
+            {education &&
+              education.map((item, i) => {
+                return (
+                  <div key={i} className={styles.container__item}>
+                    <p className={styles.date}>{item.date}</p>
+                    <div className={styles.container__text}>
+                      <p className={styles.title}>{item.name}</p>
+                      <p>{item.where}</p>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </motion.div> */}
+        {/* <motion.div className={styles.container}>
+          <h2 className={`${styles.heading} ${styles.heading__experience}`}>
+            Experiencia
+          </h2>
+          <div className={styles.container__items}>
+            {experience &&
+              experience.map((item, i) => {
+                return (
+                  <div key={i} className={styles.container__item}>
+                    <p className={styles.date}>{item.date}</p>
+                    <div className={styles.container__text}>
+                      <p className={styles.title}>{item.name}</p>
+                      <p>{item.where}</p>
+                      <p className={styles.desc}>{item.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </motion.div> */}
+        {/* <motion.div
+          className={styles.container}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          <div>
+            <h2>Hard Skills</h2>
+            <ul>
+              {skills &&
+                skills.map((skill, i) => {
+                  return <li key={i}>{skill}</li>;
+                })}
+            </ul>
+          </div>
+          <div>
+            <h2>Soft Skills</h2>
+            <ul>
+              {softSkills &&
+                softSkills.map((skill, i) => {
+                  return <li key={i}>{skill}</li>;
+                })}
+            </ul>
+          </div>
+        </motion.div> */}
+        {/* <div className={styles.container}>
           <h2
             className={`${styles.heading} ${styles.heading__recommendations}`}
           >
@@ -172,7 +303,7 @@ export default function About() {
                 </>
               );
             })}
-        </div>
+        </div> */}
       </main>
       <ParallaxText baseVelocity={-3}>SBRE MÍ . . .</ParallaxText>
     </>
