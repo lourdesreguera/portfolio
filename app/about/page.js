@@ -9,7 +9,6 @@ import {
   useSpring,
   useTransform,
   useVelocity,
-  useViewportScroll,
 } from "framer-motion";
 import styles from "../../styles/about.module.css";
 import Nav from "../components/Nav";
@@ -167,23 +166,41 @@ export default function About() {
           </div>
         </Box>
         <Box>
-          <div>
-            <h2>Hard Skills</h2>
-            <ul>
-              {skills &&
-                skills.map((skill, i) => {
-                  return <li key={i}>{skill}</li>;
-                })}
-            </ul>
-          </div>
-          <div>
-            <h2>Soft Skills</h2>
-            <ul>
-              {softSkills &&
-                softSkills.map((skill, i) => {
-                  return <li key={i}>{skill}</li>;
-                })}
-            </ul>
+          <div className={styles.container__skills}>
+            <div className={styles.container__skill}>
+              <h2 className={styles.heading}>Hard Skills</h2>
+              <ul className={styles.skills}>
+                {skills &&
+                  skills.map((skill, i) => {
+                    return <li key={i} className={styles.skill}>{skill}</li>;
+                  })}
+              </ul>
+            </div>
+            <div className={styles.container__skill}>
+              <div>
+                <h2 className={styles.heading}>Soft Skills</h2>
+                <ul className={styles.skills}>
+                  {softSkills &&
+                    softSkills.map((skill, i) => {
+                      return <li key={i} className={styles.skill}>{skill}</li>;
+                    })}
+                </ul>
+              </div>
+              <div>
+                  <h2 className={styles.heading}>Idiomas</h2>
+                  <div className={styles.container__languages}>
+                    {languages &&
+                      languages.map((item, i) => {
+                        return (
+                          <div key={i} className={styles.language}>
+                            <div className={styles.language__name}>{item.language}</div>
+                            <div className={styles.language__level}>{item.level}</div>
+                          </div>
+                        );
+                      })}
+                  </div>
+              </div>
+            </div>
           </div>
         </Box>
         <Box>

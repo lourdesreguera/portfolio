@@ -53,7 +53,8 @@
   margin: 0 auto;
 }
 
-.heading__education, .heading__recommendations {
+.heading__education,
+.heading__recommendations {
   text-align: end;
 }
 
@@ -68,7 +69,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding-top: 0.5rem;
-
 }
 
 .date {
@@ -101,4 +101,41 @@
 .p__quote {
   padding-top: 0.2rem;
   font-size: 0.75rem;
+}
+
+.container__skills {
+  display: flex;
+  justify-content: center;
+}
+
+.container__skill {
+  margin: 0 3rem;
+}
+
+.skills {
+  list-style: none;
+}
+
+.skill {
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+
+.container__languages {
+  display: flex;
+  justify-content: center;
+}
+
+.language {
+  margin: 0 2rem;
+}
+
+.language__name {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+.language__level {
+  text-transform: uppercase;
 }

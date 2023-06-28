@@ -65,7 +65,13 @@ const CV = {
         "Creatividad. Habilidades comunicativas. Atención al detalle. Actitud positiva.",
     },
   ],
-  languages: ["Inglés", "Español"],
+  languages: [
+    {
+      language: "Inglés",
+      level: "nivel B2",
+    },
+    { language: "Español", level: "Nativo" },
+  ],
   skills: [
     "HTML",
     "CSS y SASS",
