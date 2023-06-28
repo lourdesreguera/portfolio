@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -11,106 +11,8 @@ import {
 } from "framer-motion";
 import styles from "../../styles/about.module.css";
 import Nav from "../components/Nav";
-import Image from "next/image";
-import card1 from "../../public/images/card1.jpg";
 import { wrap } from "@motionone/utils";
-
-const cards = [
-  {
-    id: 1,
-    heading: "Cómo soy",
-    bcg: card1,
-    text: "Me gusta estar en constante aprendizaje y evolución, razón por la que decidí dar un giro a mi carrera profesional y dedicarme por completo al mundo del desarrollo web. Me siento cómoda trabajando en equipo, me considero una persona organizada y comprometida con mi trabajo.",
-  },
-  {
-    id: 2,
-    heading: "Idiomas",
-  },
-  {
-    id: 3,
-    heading: "Formación",
-    text: [
-      {
-        name: "Bootcamp FullStack Developer",
-        date: "jul 2022 / sept 2022",
-        where: "Upgrade Hub",
-      },
-      {
-        name: "Responsive Web Design",
-        date: "abr 2022",
-        where: "FreeCodeCamp",
-      },
-      {
-        name: "Curso Desarrollo y Diseño Web",
-        date: "mar 2022",
-        where: "SuperHi",
-      },
-      {
-        name: "Máster en Marketing, Publicidad y Diseño",
-        date: "nov 2015 / jun 2016",
-        where: "Nett Formación",
-      },
-      {
-        name: "Grado en Administración y Dirección de Empresas",
-        date: "sept 2011 / jun 2015",
-        where: "Universidad de Sevilla",
-      },
-    ],
-  },
-  {
-    id: 4,
-    heading: "Experiencia",
-    text: [
-      {
-        name: "Frontend Developer",
-        date: "oct 2022 / actualidad",
-        where: "TSE Technology (Remoto)",
-        description:
-          "Desarrollo frontend con ReactJS y Material UI, Diseño UX/UI con Figma. Metodología SCRUM.",
-      },
-      {
-        name: "Administrativo Atención al Usuario",
-        date: "mar 2020 / dic 2021",
-        where: "Hospital San Rafael (Granada)",
-        description:
-          "Colaboración. Comunicación. Flexibilidad. Capacidad de trabajo en equipo. Tolerancia a la presión. Empatía.",
-      },
-      {
-        name: "Responsable de Administración",
-        date: "oct 2017 / dic 2019",
-        where: "Clínica Generalife (Granada)",
-        description:
-          "Gestión del tiempo. Capacidad de trabajo en equipo. Responsabilidad. Habilidades interpersonales. Resolución de conflictos. Liderazgo.",
-      },
-      {
-        name: "Emprendedora",
-        date: "abr 2016 / oct 2018",
-        where: "LouB",
-        description:
-          "Diseño de prendas. Creación de tienda online. Toma de decisiones. Innovación. Iniciativa. Resolución.",
-      },
-      {
-        name: "Hostess y Community Manager",
-        date: "dic 2016 / sept 2017",
-        where: "Basarri Gin Club (Madrid)",
-        description:
-          "Creatividad. Habilidades comunicativas. Atención al detalle. Actitud positiva.",
-      },
-    ],
-  },
-  {
-    id: 5,
-    heading: "Soft Skills",
-  },
-  {
-    id: 6,
-    heading: "Sobre mí",
-  },
-  {
-    id: 7,
-    heading: "Hard Skills",
-  },
-];
+import cv from "../components/cvData";
 
 function ParallaxText({ children, baseVelocity = 100 }) {
   const baseX = useMotionValue(0);
@@ -173,59 +75,106 @@ function ParallaxText({ children, baseVelocity = 100 }) {
 }
 
 export default function About() {
-  // const [selectedId, setSelectedId] = useState(null);
-
-  // console.log(selectedId);
+  const {
+    aboutMe,
+    education,
+    experience,
+    skills,
+    softSkills,
+    languages,
+    recommendations,
+  } = cv;
   return (
     <>
       <Nav />
-      <ParallaxText baseVelocity={-3}>{cards[0].heading}</ParallaxText>
-      <p>{cards[0].text}</p>
-      <ParallaxText baseVelocity={3}>{cards[2].heading}</ParallaxText>
-      {cards[2].text &&
-        cards[2].text.map((card) => {
-          return (
-            <div key={card.name}>
-              <p>{card.name}</p>
-              <p>{card.date}</p>
-              <p>{card.place}</p>
-            </div>
-          );
-        })}
-        <ParallaxText baseVelocity={-3}>{cards[3].heading}</ParallaxText>
-      {cards[3].text &&
-        cards[3].text.map((card) => {
-          return (
-            <div key={card.name}>
-              <p>{card.name}</p>
-              <p>{card.date}</p>
-              <p>{card.place}</p>
-              <p>{card.description}</p>
-            </div>
-          );
-        })}
-      {/* <h1 className={styles.title}>SBRE MÍ</h1>
-      <div className={styles.layoutCards}>
-        {cards.map((card) => (
-          <motion.div
-            className={selectedId === card ? styles.openedCard : styles.card}
-            key={card.id}
-            whileHover={{ scale: 1.05 }}
-            layout
-            onClick={() => (selectedId ? null : setSelectedId(card))}
+      <main className={styles.main}>
+        <div className={styles.container}>
+          <h2 className={`${styles.heading} ${styles.heading__about}`}>
+            Sobre mí
+          </h2>
+          <p className={styles.quote}>{`"${aboutMe}"`}</p>
+        </div>
+        <div className={styles.container}>
+          <h2 className={`${styles.heading} ${styles.heading__education}`}>
+            Formación
+          </h2>
+          <div className={styles.container__items}>
+            {education &&
+              education.map((item, i) => {
+                return (
+                  <div key={i} className={styles.container__item}>
+                    <p className={styles.date}>{item.date}</p>
+                    <div className={styles.container__text}>
+                      <p className={styles.title}>{item.name}</p>
+                      <p>{item.where}</p>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+        <div className={styles.container}>
+          <h2 className={`${styles.heading} ${styles.heading__experience}`}>
+            Experiencia
+          </h2>
+          <div className={styles.container__items}>
+            {experience &&
+              experience.map((item, i) => {
+                return (
+                  <div key={i} className={styles.container__item}>
+                    <p className={styles.date}>{item.date}</p>
+                    <div className={styles.container__text}>
+                      <p className={styles.title}>{item.name}</p>
+                      <p>{item.where}</p>
+                      <p className={styles.desc}>{item.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+        <div className={styles.container}>
+          <div>
+            <h2>Hard Skills</h2>
+            <ul>
+              {skills &&
+                skills.map((skill, i) => {
+                  return <li key={i}>{skill}</li>;
+                })}
+            </ul>
+          </div>
+          <div>
+            <h2>Soft Skills</h2>
+            <ul>
+              {softSkills &&
+                softSkills.map((skill, i) => {
+                  return <li key={i}>{skill}</li>;
+                })}
+            </ul>
+          </div>
+        </div>
+        <div className={styles.container}>
+          <h2
+            className={`${styles.heading} ${styles.heading__recommendations}`}
           >
-            <p className={styles.card__heading}>{card.heading}</p>
-            {selectedId === card && (
-              <>
-                <div onClick={() => setSelectedId(null)}>
-                  <div className={styles["openCard" + card.id]}></div>
-                  <p>{card.text}</p>
-                </div>
-              </>
-            )}
-          </motion.div>
-        ))}
-      </div> */}
+            Dicen sobre mí...
+          </h2>
+          {recommendations &&
+            recommendations.map((item, i) => {
+              return (
+                <>
+                  <p key={i} className={styles.quote}>{`"${item.text}"`}</p>
+                  <div className={styles.quote__person}>
+                    <p>{item.name}</p>
+                    <p className={styles.p__quote}>{item.company}</p>
+                    <p>{item.mail}</p>
+                  </div>
+                </>
+              );
+            })}
+        </div>
+      </main>
+      <ParallaxText baseVelocity={-3}>SBRE MÍ . . .</ParallaxText>
     </>
   );
 }

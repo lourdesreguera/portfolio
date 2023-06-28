@@ -1,27 +1,98 @@
-
-
+.main {
+  max-height: calc(100vh - 12rem);
+  padding: 4rem;
+}
 .parallax {
   overflow: hidden;
-  /* letter-spacing: -2px; */
-  /* line-height: 0.8; */
   margin: 0;
   white-space: nowrap;
   display: flex;
   flex-wrap: nowrap;
+  position: fixed;
+  bottom: 0;
 }
 
 .parallax span {
   display: block;
   margin-right: 5rem;
   font-family: var(--font-leky);
+  color: var(--pink);
+  line-height: 9rem;
 }
 
 .parallax .scroller {
-  font-weight: 600;
   text-transform: uppercase;
-  font-size: 64px;
+  font-size: 3rem;
   display: flex;
   white-space: nowrap;
   display: flex;
   flex-wrap: nowrap;
+}
+
+.container {
+  margin-bottom: 2rem;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.heading__about, .heading__experience {
+  text-align: start;
+}
+
+.quote {
+  font-style: italic;
+  font-weight: 1.25rem;
+  line-height: 1.4;
+}
+
+.heading__education, .heading__recommendations {
+  text-align: end;
+}
+
+.container__items {
+  display: flex;
+  flex-direction: column;
+  max-width: 48.25rem;
+  margin: 0 auto;
+}
+
+.container__item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 0.5rem;
+
+}
+
+.date {
+  grid-column: 1 / 2;
+  max-width: 12.6rem;
+  font-weight: 600;
+  text-align: start;
+}
+
+.container__text {
+  grid-column: 2 / 4;
+  text-align: start;
+  max-width: 38rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+}
+
+.desc {
+  padding-top: 0.5rem;
+}
+
+.quote__person {
+  text-align: end;
+}
+
+.p__quote {
+  padding: 0.25rem 0;
 }
