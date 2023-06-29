@@ -138,7 +138,7 @@ export default function About() {
                     <p className={styles.date}>{item.date}</p>
                     <div className={styles.container__text}>
                       <p className={styles.title}>{item.name}</p>
-                      <p>{item.where}</p>
+                      <p className={styles.place}>{item.where}</p>
                     </div>
                   </div>
                 );
