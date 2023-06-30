@@ -1,6 +1,6 @@
 .main {
   position: absolute;
-  margin: 4rem;
+  margin: 4rem 4rem 6rem 4rem;
 }
 .parallax {
   overflow: hidden;
@@ -32,6 +32,10 @@
 
 .container {
   margin-bottom: 2rem;
+}
+
+.lastContainer {
+  padding-bottom: 6rem;
 }
 
 .heading {

@@ -81,7 +81,7 @@ const divVariant = {
   hidden: { opacity: 0, scale: 0 },
 };
 
-const Box = ({ children }) => {
+const Box = ({ position, children }) => {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
@@ -95,7 +95,7 @@ const Box = ({ children }) => {
 
   return (
     <motion.div
-      className={styles.container}
+      className={position === 'last' ? styles.lastContainer : styles.container}
       ref={ref}
       variants={divVariant}
       initial="hidden"
@@ -203,7 +203,7 @@ export default function About() {
             </div>
           </div>
         </Box>
-        <Box>
+        <Box position={'last'}>
           <h2
             className={`${styles.heading} ${styles.heading__recommendations}`}
           >
