@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
+
+// custom
 import { MenuItem } from "./MenuItem";
+import { links } from "./links";
+
+// styles
 import styles from "../../styles/dropdown.module.css";
 
 const variants = {
@@ -11,30 +16,13 @@ const variants = {
   },
 };
 
-const items = [
-  {
-    id: 1,
-    name: "Portfolio",
-    href: "/portfolio",
-  },
-  {
-    id: 2,
-    name: "Sobre mí",
-    href: "/about",
-  },
-  {
-    id: 3,
-    name: "Contacto",
-    href: "/contact",
-  },
-];
-
-export default function Navigation({isOpen}) {
+export default function Navigation({ isOpen }) {
   return (
-    <motion.ul variants={variants} className={isOpen ? styles.ul : styles.hiddenUl}>
-      {items.map((i) => (
-        <MenuItem i={i} key={i.id} />
-      ))}
+    <motion.ul
+      variants={variants}
+      className={isOpen ? styles.ul : styles.hiddenUl}
+    >
+      {links && links.map((i) => <MenuItem i={i} key={i.id} />)}
     </motion.ul>
   );
 }

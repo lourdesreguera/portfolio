@@ -1,10 +1,15 @@
 "use client";
+
 import Image from "next/image";
-import Nav from "../components/Nav";
-import styles from "../../styles/contact.module.css";
 import { motion } from "framer-motion";
 
-export default function page() {
+// custom
+import Nav from "../components/Nav";
+
+// styles
+import styles from "../../styles/contact.module.css";
+
+export default function Contact() {
   return (
     <>
       <header>

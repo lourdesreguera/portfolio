@@ -1,8 +1,8 @@
+"use client";
 
-'use client'
 import { useEffect, useRef } from "react";
 
-export const useDimensions = ref => {
+export const useDimensions = (ref) => {
   const dimensions = useRef({ width: 0, height: 0 });
 
   useEffect(() => {

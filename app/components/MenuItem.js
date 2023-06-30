@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import styles from "../../styles/dropdown.module.css";
 import Link from "next/link";
 import Image from "next/image";
+
 const variants = {
   open: {
     y: 0,
@@ -19,10 +20,7 @@ const variants = {
   },
 };
 
-// const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
-
 export const MenuItem = ({ i }) => {
-  //   const style = { border: `2px solid ${colors[i]}` };
   return (
     <motion.li
       className={styles.li}
@@ -30,9 +28,15 @@ export const MenuItem = ({ i }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Link href={i.href} className={styles.li__container}>
-        <p>{i.name}</p>
-        <Image src="./blackArrow.svg" alt="" width={24} height={24} className={styles.arrow} />
+      <Link href={i.href} className={styles.li__container} aria-label={`Ir a la página ${i.title}`}>
+        <p>{i.title}</p>
+        <Image
+          src="./blackArrow.svg"
+          alt=""
+          width={24}
+          height={24}
+          className={styles.arrow}
+        />
       </Link>
     </motion.li>
   );
