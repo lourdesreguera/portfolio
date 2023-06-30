@@ -46,7 +46,7 @@ export default function NavHome() {
                 whileTap={{ scale: 0.95 }}
                 key={i.id}
               >
-                <Link href={i.href} className={stylesNav.li__container}>
+                <Link href={i.href} className={stylesNav.li__container} aria-label={`Ir a la página ${i.title}`}>
                   <p>{i.title}</p>
                   <Image
                     src="./blackArrow.svg"

@@ -23,4 +23,9 @@
   display: flex;
 }
 
+.link {
+  z-index: 1;
+  position: absolute;
+}
+
 
