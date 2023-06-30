@@ -1,6 +1,6 @@
 .main {
-  max-height: calc(100vh - 12rem);
-  padding: 4rem;
+  position: absolute;
+  margin: 4rem;
 }
 .parallax {
   overflow: hidden;
@@ -10,6 +10,7 @@
   flex-wrap: nowrap;
   position: fixed;
   bottom: 0;
+  background-color: var(--ash-black);
 }
 
 .parallax span {
@@ -107,6 +108,10 @@
 .p__quote {
   padding-top: 0.2rem;
   font-size: 0.75rem;
+}
+
+.container__quote {
+margin-bottom: 6rem;
 }
 
 .container__skills {

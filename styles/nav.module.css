@@ -21,18 +21,6 @@
 
 .header {
   display: flex;
-  /* padding: 1rem 1rem 0 1rem; */
 }
 
-@media (min-width: 768px) {
-  /* .nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90vw;
-        position: fixed;
-        top: 1rem;
-        left: 4rem;
-        z-index: 1;
-    } */
-}
+

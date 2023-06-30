@@ -209,7 +209,7 @@ export default function About() {
           >
             Dicen sobre mí...
           </h2>
-          <div>
+          <div className={styles.container__quote}>
             {recommendations &&
               recommendations.map((item, i) => {
                 return (

@@ -141,7 +141,7 @@
 
   .section {
     justify-content: center;
-    margin: unset;
+    /* margin: unset; */
   }
 
   .headings__container {
