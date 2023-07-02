@@ -11,7 +11,7 @@ import { wrap } from "@motionone/utils";
 import { useRef } from "react";
 
 // styles
-import styles from "../../../styles/about.module.css";
+import styles from "../../../../styles/about.module.css";
 
 export default function ParallaxText({ children, baseVelocity = 100 }) {
   const baseX = useMotionValue(0);

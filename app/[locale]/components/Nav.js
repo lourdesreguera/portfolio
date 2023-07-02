@@ -2,7 +2,7 @@
 import DropdownMenu from "./DropdownMenu";
 
 // styles
-import styles from "../../styles/nav.module.css";
+import styles from "../../../styles/nav.module.css";
 import Link from "next/link";
 
 export default function Nav() {

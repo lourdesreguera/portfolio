@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 // styles
-import stylesHome from "../../styles/page.module.css";
-import stylesNav from "../../styles/dropdown.module.css";
+import stylesHome from "../../../styles/page.module.css";
+import stylesNav from "../../../styles/dropdown.module.css";
 
 // custom
 import { links } from "./links";

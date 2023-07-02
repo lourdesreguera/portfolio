@@ -1,7 +1,8 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 // styles
-import styles from "../../styles/about.module.css";
+import styles from "../../../styles/about.module.css";
 
 // custom
 import Nav from "../components/Nav";
@@ -20,6 +21,8 @@ export default function About() {
     recommendations,
   } = cv;
 
+  const t = useTranslations('AboutPage')
+
   return (
     <>
       <Nav />
@@ -31,7 +34,7 @@ export default function About() {
         </Section>
         <Section>
           <h2 className={`${styles.heading} ${styles.heading__education}`}>
-            Formación
+            {t('education')}
           </h2>
           <div className={styles.container__items}>
             {education &&
@@ -51,7 +54,7 @@ export default function About() {
         </Section>
         <Section>
           <h2 className={`${styles.heading} ${styles.heading__experience}`}>
-            Experiencia
+          {t('experience')}
           </h2>
           <div className={styles.container__items}>
             {experience &&
@@ -100,7 +103,7 @@ export default function About() {
                 </ul>
               </div>
               <div>
-                <h2 className={styles.heading}>Idiomas</h2>
+                <h2 className={styles.heading}>{t('languages')}</h2>
                 <div className={styles.container__languages}>
                   {languages &&
                     languages.map((item) => {
@@ -123,7 +126,7 @@ export default function About() {
           <h2
             className={`${styles.heading} ${styles.heading__recommendations}`}
           >
-            Dicen sobre mí...
+            {t('aboutMe')}
           </h2>
           <div className={styles.container__quote}>
             {recommendations &&
@@ -143,7 +146,7 @@ export default function About() {
           </div>
         </Section>
       </main>
-      <ParallaxText baseVelocity={-3}>SBRE MÍ . . .</ParallaxText>
+      <ParallaxText baseVelocity={-3}>{t('about')}</ParallaxText>
     </>
   );
 }

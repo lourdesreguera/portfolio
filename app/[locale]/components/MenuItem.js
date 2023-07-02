@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styles from "../../styles/dropdown.module.css";
+import styles from "../../../styles/dropdown.module.css";
 import Link from "next/link";
 import Image from "next/image";
 

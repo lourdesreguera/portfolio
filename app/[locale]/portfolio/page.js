@@ -4,13 +4,13 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect } from "react";
 
 // custom
-import img1 from "../../public/images/1.png";
-import img2 from "../../public/images/2.png";
-import img3 from "../../public/images/3.png";
+import img1 from "../../../public/images/1.png";
+import img2 from "../../../public/images/2.png";
+import img3 from "../../../public/images/3.png";
 import Nav from "../components/Nav";
 
 // styles
-import styles from "../../styles/portfolio.module.css";
+import styles from "../../../styles/portfolio.module.css";
 import ImageComp from "./components/ImageComp";
 
 const images = [

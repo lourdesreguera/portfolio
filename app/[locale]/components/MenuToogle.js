@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 // styles
-import styles from "../../styles/dropdown.module.css";
+import styles from "../../../styles/dropdown.module.css";
 
 const Path = (props) => (
   <motion.path

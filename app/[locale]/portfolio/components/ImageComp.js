@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRef } from "react";
 
 // styles
-import styles from ".././../../styles/portfolio.module.css";
+import styles from ".././../../../styles/portfolio.module.css";
 
 function useParallax(value, distance) {
   return useTransform(value, [0, 1], [-distance, distance]);

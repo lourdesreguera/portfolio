@@ -7,8 +7,8 @@ import Navigation from "./Navigation";
 import { MenuToggle } from "./MenuToogle";
 
 // styles
-import styles from "../../styles/nav.module.css";
-import stylesDropdown from "../../styles/dropdown.module.css";
+import styles from "../../../styles/nav.module.css";
+import stylesDropdown from "../../../styles/dropdown.module.css";
 
 const sidebar = {
   open: (height = 1000) => ({

@@ -7,9 +7,15 @@ import { motion } from "framer-motion";
 import Nav from "../components/Nav";
 
 // styles
-import styles from "../../styles/contact.module.css";
+import styles from "../../../styles/contact.module.css";
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
+  const t = useTranslations('ContactPage')
+
+  const linkedinImage = '/linkedinIcon.svg'
+  const githubImage = '/githubIcon.svg'
+
   return (
     <>
       <header>
@@ -17,8 +23,8 @@ export default function Contact() {
       </header>
       <main className={styles.container}>
         <div className={styles.container__headings}>
-          <h1 className={styles.h1}>¿Hablamos?</h1>
-          <h2 className={styles.h2}>Contacta conmigo</h2>
+          <h1 className={styles.h1}>{t('heading')}</h1>
+          <h2 className={styles.h2}>{t('subheading')}</h2>
         </div>
         <div className={styles.container__links}>
           <a
@@ -31,7 +37,7 @@ export default function Contact() {
           <a href="tel:+34664315224" className={styles.phone}>
             (+34) 664 31 52 24
           </a>
-          <p className={styles.address}>Granada, España</p>
+          <p className={styles.address}>{t('city')}</p>
           <ul className={styles.ul}>
             <motion.li
               className={styles.li}
@@ -39,7 +45,7 @@ export default function Contact() {
               whileTap={{ scale: 0.95 }}
             >
               <Image
-                src="./linkedinIcon.svg"
+                src={linkedinImage}
                 alt=""
                 width={24}
                 height={24}
@@ -56,7 +62,7 @@ export default function Contact() {
               whileTap={{ scale: 0.6 }}
             >
               <Image
-                src="./githubIcon.svg"
+                src={githubImage}
                 alt=""
                 width={24}
                 height={24}

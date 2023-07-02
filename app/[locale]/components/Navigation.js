@@ -5,7 +5,7 @@ import { MenuItem } from "./MenuItem";
 import { links } from "./links";
 
 // styles
-import styles from "../../styles/dropdown.module.css";
+import styles from "../../../styles/dropdown.module.css";
 
 const variants = {
   open: {

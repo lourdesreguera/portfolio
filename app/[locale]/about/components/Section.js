@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
 // styles
-import styles from "../../../styles/about.module.css";
+import styles from "../../../../styles/about.module.css";
 
 const divVariant = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
